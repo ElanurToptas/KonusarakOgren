@@ -1,12 +1,13 @@
-import React from 'react'
-import {View,Text} from "react-native"
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./src/navigation/RootNavigator";
 
 function App() {
   return (
-   <View>
-    <Text style={{fontSize:33}}>Ela</Text>
-   </View>
-  )
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
+  );
 }
 
-export default App
+export default App;

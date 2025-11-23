@@ -1,4 +1,4 @@
-package com.konusarakogren
+package com.konusarak_ogren
 
 import android.app.Application
 import com.facebook.react.PackageList

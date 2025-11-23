@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "KonusarakOgren.app"
-               BlueprintName = "KonusarakOgren"
-               ReferencedContainer = "container:KonusarakOgren.xcodeproj">
+               BuildableName = "konusarak_ogren.app"
+               BlueprintName = "konusarak_ogren"
+               ReferencedContainer = "container:konusarak_ogren.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "KonusarakOgrenTests.xctest"
-               BlueprintName = "KonusarakOgrenTests"
-               ReferencedContainer = "container:KonusarakOgren.xcodeproj">
+               BuildableName = "konusarak_ogrenTests.xctest"
+               BlueprintName = "konusarak_ogrenTests"
+               ReferencedContainer = "container:konusarak_ogren.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "KonusarakOgren.app"
-            BlueprintName = "KonusarakOgren"
-            ReferencedContainer = "container:KonusarakOgren.xcodeproj">
+            BuildableName = "konusarak_ogren.app"
+            BlueprintName = "konusarak_ogren"
+            ReferencedContainer = "container:konusarak_ogren.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "KonusarakOgren.app"
-            BlueprintName = "KonusarakOgren"
-            ReferencedContainer = "container:KonusarakOgren.xcodeproj">
+            BuildableName = "konusarak_ogren.app"
+            BlueprintName = "konusarak_ogren"
+            ReferencedContainer = "container:konusarak_ogren.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
