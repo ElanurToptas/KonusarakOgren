@@ -1,12 +1,26 @@
-import React from 'react'
-import {View, Text} from "react-native"
+import React from "react";
+import { View, StyleSheet, Dimensions } from "react-native";
+import Header from "../components/Header";
+import MessageBubble from "../components/MessageBubble";
+import Keyboard from "../components/Keyboard";
+const { width, height } = Dimensions.get("window");
 
 function SpeakScreen() {
   return (
-     <View>
-        <Text>Speak fgh </Text>
-       </View>
-  )
+    <View style={style.container}>
+      <Header header={"AI ile Konuş"}/>
+      <MessageBubble />
+      <Keyboard />
+    </View>
+  );
 }
 
-export default SpeakScreen
+export default SpeakScreen;
+
+const style = StyleSheet.create({
+  container: {
+    backgroundColor: "white",
+    height: height,
+    padding: height * 0.04,
+  },
+});

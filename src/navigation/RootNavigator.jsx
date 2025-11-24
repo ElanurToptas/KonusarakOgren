@@ -31,7 +31,10 @@ function RootNavigator() {
         headerShown: false,
       })}
     >
-      <Tab.Screen name="Speak" component={SpeakScreen} />
+      <Tab.Screen name="Speak" component={SpeakScreen} 
+      options={{ headerShown: false }}
+
+      />
 
       <Tab.Screen
         name="MiddleAction"
@@ -53,7 +56,8 @@ function RootNavigator() {
         }}
       />
 
-      <Tab.Screen name="Report" component={ReportScreen} />
+      <Tab.Screen name="Report" component={ReportScreen} 
+         options={{ headerShown: false }}/>
     </Tab.Navigator>
   );
 }
