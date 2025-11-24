@@ -1,16 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const textSlice =  createSlice({
-    name:"input",
-    initialState:{
-        input: "",
+export const textSlice = createSlice({
+  name: "input",
+  initialState: {
+    input: "",
+    entries: [],
+  },
+  reducers: {
+    input: (state, action) => {
+      state.input = action.payload;
     },
-    reducers:{
-        input:(state, action) => {
-            state.input= action.payload;
-        }
-    }
-})
+    addEntry(state, action) {
+      state.entries.push(action.payload);
+    },
+    setEntries(state, action) {
+      state.entries = action.payload;
+    },
+  },
+});
 
-export const {input} = textSlice.actions;
+export const { input, addEntry, setEntries } = textSlice.actions;
 export default textSlice.reducer;

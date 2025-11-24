@@ -1,12 +1,8 @@
 import React from 'react'
-import {View,Text, TextInput, StyleSheet,TouchableOpacity} from "react-native"
+import {View, TextInput, StyleSheet,TouchableOpacity} from "react-native"
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-function InputItem({message}) {
-
-     const handleEnter = () => {
-    
-  };
+function InputItem({message, onChange}) {
   
   return (
     <View>
@@ -15,6 +11,7 @@ function InputItem({message}) {
         placeholder='Bugün Nasılsın?'
         style={styles.inputText}
         value={message}
+        onChangeText={onChange}
         >
         </TextInput>
        </View>
