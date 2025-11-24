@@ -1,12 +1,14 @@
-import React from 'react'
-import {View, Text} from "react-native"
+import React from "react";
+import { View} from "react-native";
+import KeyboardItem from "./KeyboardItem";
 
 function Keyboard() {
+  const handleLetter = () => {};
   return (
     <View>
-        <Text>Keyboard</Text>
-       </View>
-  )
+      <KeyboardItem letter={handleLetter} />
+    </View>
+  );
 }
 
-export default Keyboard
+export default Keyboard;

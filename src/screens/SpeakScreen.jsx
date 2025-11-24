@@ -21,6 +21,6 @@ const style = StyleSheet.create({
   container: {
     backgroundColor: "white",
     height: height,
-    padding: height * 0.04,
+    padding: height * 0.03,
   },
 });
