@@ -6,6 +6,9 @@ const { width, height } = Dimensions.get("window");
 
 function MessageBubble() {
   const input = useSelector((state) => state.input.input);
+  const entries = useSelector((state) => state.input.entries);
+
+  const lastEntry = entries.length > 0 ? entries[entries.length - 1] : null;
   return (
     <View>
       <View style={styles.container}>
@@ -14,6 +17,11 @@ function MessageBubble() {
             <Text style={styles.text}>{input}</Text>
           </View>
         ) : null}
+       {lastEntry && (
+          <View style={styles.inputConatiner}>
+            <Text>{lastEntry.suggestion}</Text>
+          </View>
+        )}
       </View>
     </View>
   );

@@ -18,3 +18,12 @@ export const loadEntries = async () => {
   }
 };
 
+export const clearStorage = async () => {
+  try {
+    await AsyncStorage.clear();
+    console.log("Tüm AsyncStorage temizlendi ");
+  } catch (e) {
+    console.error("AsyncStorage temizleme hatası:", e);
+  }
+};
+
