@@ -165,6 +165,3 @@ Uygulama offline açıldığında bile geçmiş analizler Report ekranında gör
 
 İnternet yoksa sadece yeni analiz alınamaz, fakat eski kayıtlar korunur.
 
-
-
-
