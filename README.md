@@ -93,17 +93,17 @@ https://router.huggingface.co/hf-inference/models/distilbert/distilbert-base-unc
 
 ```
 Girdi formatı:
-
+```bash
 { "inputs": "happy" }
-
+```
 Çıktı formatı (örnek):
-
+```bash
 [
   [
     { "label": "POSITIVE", "score": 0.97 }
   ]
 ]
-
+```
 
 # 2. Türkçe Duygu Analizi Modeli
 
@@ -116,17 +116,17 @@ https://router.huggingface.co/hf-inference/models/savasy/bert-base-turkish-senti
 ```
 
 Girdi formatı:
-
+```bash
 { "inputs": "mutluyum" }
-
+```
 Çıktı formatı (örnek):
-
+```bash
 [
   [
     { "label": "POSITIVE", "score": 0.97 }
   ]
 ]
-
+```
 ## 🧠 Uygulama İçindeki AI Akışı
 
 # 1.Kullanıcı metni özel klavyeden yazar.
