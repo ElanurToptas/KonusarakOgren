@@ -13,15 +13,38 @@ function MessageBubble() {
     <View>
       <View style={styles.container}>
         {input ? (
-          <View style={styles.inputConatiner}>
-            <Text style={styles.text}>{input}</Text>
+          <View>
+            <View style={[styles.inputConatiner, {
+              backgroundColor: lastEntry.aiResult.label === "POSITIVE" ?  "#309dff":"black",
+            }]}>
+              <Text style={styles.text}>{input}</Text>
+            </View>
+            <View
+              style={[
+                styles.inputConatiner,
+                {
+                  backgroundColor:
+                    lastEntry.aiResult.label === "POSITIVE" ? "orange" : "red",
+                  alignSelf: "flex-start",
+                },
+              ]}
+            >
+              <Text style={styles.text}>{lastEntry.summary}</Text>
+            </View>
+            <View
+              style={[
+                styles.inputConatiner,
+                {
+                  backgroundColor:
+                    lastEntry.aiResult.label === "POSITIVE" ? "green": "gray",
+                  alignSelf: "flex-start",
+                },
+              ]}
+            >
+              <Text style={styles.text}>{lastEntry.suggestion}</Text>
+            </View>
           </View>
         ) : null}
-       {lastEntry && (
-          <View style={styles.inputConatiner}>
-            <Text>{lastEntry.suggestion}</Text>
-          </View>
-        )}
       </View>
     </View>
   );
@@ -34,13 +57,13 @@ const styles = StyleSheet.create({
     height: height * 0.52,
   },
   inputConatiner: {
-    backgroundColor: "#309dff",
-    height: height * 0.045,
+    height: height * 0.052,
     alignSelf: "flex-end",
     maxWidth: width * 0.8,
     borderRadius: 14,
     justifyContent: "center",
     paddingHorizontal: 18,
+    marginBottom: 10,
   },
   text: {
     fontSize: 16,

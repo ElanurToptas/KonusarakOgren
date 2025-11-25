@@ -16,39 +16,39 @@ function Keyboard() {
   const [text, setText] = useState("");
   const [isUpper, setIsUpper] = useState(false);
 
-  // const analyzeSentiment = async (text) => {
-  //   try {
-  //     const res = await fetch(
-  //       "https://router.huggingface.co/hf-inference/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english",
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           Authorization: "",
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify({ inputs: text }),
-  //       }
-  //     );
+  const analyzeSentiment = async (text) => {
+    try {
+      const res = await fetch(
+        "https://router.huggingface.co/hf-inference/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+        {
+          method: "POST",
+          headers: {
+            Authorization: " ",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ inputs: text }),
+        }
+      );
 
-  //     const data = await res.json();
-  //     console.log("HF RAW:", data);
+      const data = await res.json();
+      console.log("HF RAW:", data);
 
-  //     if (Array.isArray(data) && Array.isArray(data[0])) {
-  //       const best = data[0].sort((a, b) => b.score - a.score)[0];
-  //       return best;
-  //     }
+      if (Array.isArray(data) && Array.isArray(data[0])) {
+        const best = data[0].sort((a, b) => b.score - a.score)[0];
+        return best;
+      }
 
-  //     return null;
-  //   } catch (err) {
-  //     console.log("API ERROR:", err);
-  //     return null;
-  //   }
-  // };
+      return null;
+    } catch (err) {
+      console.log("API ERROR:", err);
+      return null;
+    }
+  };
 
   
-  useEffect(() => {
-    warmupModel();
-  }, []);
+  // useEffect(() => {
+  //   warmupModel();
+  // }, []);
 
 
   const handleLetter = async (item) => {
@@ -65,17 +65,22 @@ function Keyboard() {
           console.log("AI Result:", aiResult);
 
           let suggestion = "";
+          let summary = "";
+
           if (aiResult && aiResult.label) {
             const label = aiResult.label.toLowerCase();
 
-            if (label === "positive") suggestion = "Güzel bir gün geçirmene sevindim";
-            else if (label === "negative") suggestion = "Bügün biraz dinlenmeye ne dersin";
+            if (label === "positive") suggestion = "Güzel bir gün geçirmene sevindim" ,summary="Bugün genel olarak olumlu bir gün geçirmişsin";
+            else if (label === "negative") suggestion = "Bügün biraz dinlenmeye ne dersin" ,summary="Bugün genel olarak olumsuz bir gün geçirmişsin";
             else suggestion = "Nötr ";
           }
 
           const newEntry = {
             id: Date.now(),
             text,
+            aiResult,
+            suggestion,
+            summary,
             aiResult,
             suggestion,
             date: new Date().toISOString(),
@@ -90,7 +95,9 @@ function Keyboard() {
         }
         break;
 
+
       case " ":
+        clearStorage();
         clearStorage();
         break;
       default:

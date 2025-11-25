@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Dimensions, Text } from "react-native";
+import { View, StyleSheet, Dimensions, Text, ScrollView } from "react-native";
 import Header from "../components/Header";
 
 import { useSelector } from "react-redux";
@@ -10,19 +10,22 @@ function ReportScreen() {
   const entries = useSelector((state) => state.input.entries);
 
   return (
-    <View style={styles.container}>
-      <Header header={"Report"} />
-      {entries.map((entry) => (
+   <ScrollView>
+      <View style={styles.container}>
+        <Header header={"Report"}  />
+       {entries.map((entry) => (
         <View key={entry.id} style={styles.entryContainer}>
-          <Text>Kullanıcı: {entry.text}</Text>
+          <Text>Kullanıcı:  {entry.text}</Text>
           <Text>Öneri: {entry.suggestion}</Text>
+          <Text>Özet: {entry.summary}</Text>
         </View>
       ))}
-    </View>
-  );
+     </View>
+   </ScrollView>
+  );;
 }
 
-export default ReportScreen;
+export default ReportScreen;;
 
 const styles = StyleSheet.create({
   container: {
@@ -31,3 +34,4 @@ const styles = StyleSheet.create({
     padding: height * 0.04,
   },
 });
+;
